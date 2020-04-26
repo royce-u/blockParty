@@ -53,6 +53,7 @@ app.use((req, res, next) => {
 //controllers
 app.use('/auth', require('./controllers/auth'))
 app.use('/profile', require('./controllers/profile'))
+app.use('/post', require('./controllers/post'))
 
 //create a home route
 app.get('/', (req, res) => {
@@ -66,4 +67,4 @@ app.get('*', (req, res) => {
 })
 //------------------------listen--------------------------------
 //pick a port to listen on
-app.listen(8000)
+app.listen(3000)
