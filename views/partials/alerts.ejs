@@ -6,5 +6,14 @@
                 <% }) %>
             </div>
         </div>
-    
+<% } %> 
+
+<% if (alerts && alerts.success) { %>
+    <div class="card green">
+        <div class="card-content" style="padding: 10px">
+            <% alerts.success.forEach(s => { %>
+                <p>success: <%= s  %></p>
+                <% }) %>
+            </div>
+        </div>
 <% } %> 

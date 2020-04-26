@@ -11,7 +11,15 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    lastName: DataTypes.STRING,
+    lastName: {
+      type: DataTypes.STRING,
+      validate: {
+        len: {
+          args: [1,255],
+          msg: 'Last Name is a required field'
+        }
+      }
+    },
     email: {
       type: DataTypes.STRING,
       validate: {
@@ -48,5 +56,13 @@ module.exports = (sequelize, DataTypes) => {
   user.associate = function(models) {
     // associations can be defined here
   };
+
+  user.prototype.validPassword = function(typedInPassword) {
+    //determine if gthe password typed in hashes to the same thing as the existing has (returns boolean)
+    let correctPassword = bcrypt.compareSync(typedInPassword, this.password)
+    //return the (boolean) result of the comparison
+    return correctPassword
+  }
+  
   return user;
 };
