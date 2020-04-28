@@ -12,15 +12,17 @@
 <body>
     <%- include('partials/nav') %>
     <%- include('partials/alerts') %>
-    <div>
+    <main>
     <%- body %>
-    </div>
+    </main>
     <%- include('partials/footer') %>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.sidenav');
             var instances = M.Sidenav.init(elems, {});
+            var elems3 = document.querySelectorAll('select');
+            var instances3 = M.FormSelect.init(elems3, {});
 
             //start date is current date
             var startDate = new Date()
@@ -35,6 +37,8 @@
                 maxDate: startDate
             })
       });
+
+   
     </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 //node modules/variables
-router = require('express').Router()
+let router = require('express').Router()
 let db = require('../models')
 let passport = require('../config/passportConfig')
 

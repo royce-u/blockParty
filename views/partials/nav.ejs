@@ -5,25 +5,17 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="/">Home</a></li>
           <% if (currentUser) { %>
-          <li>
-              <a href="/profile/user">Profile Page</a>
-          </li>
+          <li><a href="/profile/user">Profile Page</a></li>
+          <li><a href="/post">Posts</a></li>
+          <li><a href="/event">Events</a></li>
           <% if (currentUser.admin) { %>
-          <li>
-              <a href="/profile/admin">Admin Page</a>
-          </li>
+          <li><a href="/profile/admin">Admin Page</a></li>
           <% } %>
-          <li>
-              <a href="/auth/logout">Logout</a>
-          </li>
-          <li><span>Hi, <%=currentUser.firstname%> &nbsp&nbsp</span></li>
+          <li><a href="/auth/logout">Logout</a></li>
+          <li><span>Hi, <%=currentUser.firstName%> &nbsp&nbsp</span></li>
           <% } else { %>
-          <li>
-              <a href="/auth/login">Login</a>
-          </li>
-          <li>
-              <a href="/auth/signup">Sign Up</a>
-          </li>
+          <li><a href="/auth/login">Login</a></li>
+          <li><a href="/auth/signup">Sign Up</a></li>
           <% } %>
       </ul>
   </div>
@@ -31,24 +23,16 @@
   <ul class="sidenav" id="mobile-demo">
       <li><a href="/">Home</a></li>
       <% if (currentUser) { %>
-      <li>
-          <a href="/profile/user">Profile Page</a>
-      </li>
+      <li><a href="/profile/user">Profile Page</a></li>
+      <li><a href="/post">Post</a></li>
+      <li><a href="/event">Events</a></li>
       <% if (currentUser.admin) { %>
-      <li>
-          <a href="/profile/admin">Admin Page</a>
-      </li>
+      <li><a href="/profile/admin">Admin Page</a></li>
       <% } %>
-      <li>
-          <a href="/auth/logout">Logout</a>
-      </li>
+      <li><a href="/auth/logout">Logout</a></li>
       <% } else { %>
-      <li>
-          <a href="/auth/login">Login</a>
-      </li>
-      <li>
-          <a href="/auth/signup">Sign Up</a>
-      </li>
+      <li><a href="/auth/login">Login</a></li>
+      <li><a href="/auth/signup">Sign Up</a></li>
       <% } %>
   </ul>
 </nav>

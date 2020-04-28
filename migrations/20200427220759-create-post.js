@@ -8,17 +8,23 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      title: {
+      categoryId: {
+        type: Sequelize.INTEGER
+      },
+      userId: {
+        type: Sequelize.INTEGER
+      },
+      headline: {
         type: Sequelize.STRING
       },
       content: {
         type: Sequelize.TEXT
       },
-      authorId: {
-        type: Sequelize.INTEGER
+      location: {
+        type: Sequelize.TEXT
       },
-      zipcode: {
-        type: Sequelize.INTEGER
+      image: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

@@ -1,6 +1,26 @@
 <h1>New Post</h1>
 
+<div class="input-field col s12">
 <form method="POST" action="/post">
-<label for="content">Content</label>
-<input type="text" name="content" id="content">
-</form>
+    <div class="input-field">
+        <select name="categoryId">
+            <option value="" disabled selected>Enter Category</option>
+            <% category.forEach(c => { %>
+              <option type="text" value="<%=c.id%>" name="categoryId"><%=c.name%></option>
+            <% }) %>
+          </select>
+    </div>
+        <label>Category</label>
+        <input type="hidden" name="userId" value="<%=currentUser.id%>">
+        <label for="headline" name="headline">Headline</label>
+        <input type="text" name=headline>
+        <label for="content">Content</label>
+        <input type="text" name="content">
+        <label for="location">Location</label>
+        <input type="text" name="location">
+        <label for="image">Image</label>
+        <input type="text" name="image">
+        <button type="submit">Submit</button>
+    </form>
+</div>
+

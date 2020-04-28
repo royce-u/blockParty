@@ -60,7 +60,6 @@ app.get('/', (req, res) => {
     res.render('home')
 })
 
-
 //create a wildcard route (catch-all) 
 app.get('*', (req, res) => {
     res.render('error')
@@ -68,3 +67,5 @@ app.get('*', (req, res) => {
 //------------------------listen--------------------------------
 //pick a port to listen on
 app.listen(3000)
+
+
