@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 //GET - new post form
 router.get('/new', (req, res) => {
     db.category.findAll()
-    .then((category, user) => {
+    .then((category) => {
         res.render('post/new', {category:category})
     })
     
@@ -24,7 +24,6 @@ router.get('/new', (req, res) => {
 router.post('/', (req, res) => {
     db.post.create(req.body)
     .then(() => {
-        console.log(req.body)
         res.redirect('/post')
     })
     .catch(err => {
@@ -34,17 +33,14 @@ router.post('/', (req, res) => {
 
 //GET/post/:id - displays a specific post
 router.get('/:id', (req, res) => {
-    console.log('req.params-----', req.params.id)
     db.post.findOne({
         where: {id: req.params.id},
-        include: [db.user, db.comment]
-    })
-        
+        include: [db.comment, db.user]
+    })  
     .then((post) => {
         res.render('post/show', { post })
     })
     .catch(err => {
-        
         console.log(err)
         res.render('error', err)
     })
@@ -61,6 +57,8 @@ router.post('/comments', (req, res) => {
         res.render('error', err)
     })
 })
+
+
 
 
 module.exports = router
