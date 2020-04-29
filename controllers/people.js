@@ -11,4 +11,6 @@ router.get('/', (req, res) => {
         res.render('people/main', {post})
     })
 })
+
+
 module.exports = router
