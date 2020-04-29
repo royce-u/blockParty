@@ -10,7 +10,7 @@
 		<% }) %>
 
 		<div id="map"></div>
-		<pre id="coordinates" class="coordinates"></pre>
+		<!-- <pre id="coordinates" class="coordinates"></pre> -->
 </div>
 
 <script>
@@ -29,18 +29,17 @@
 	// console.log(splitted)
 
 	//loop thru locations and add markers
-	for (var i = 0, i < coordi.length; i++) {
-		
+	for (var i = 0; i < coordi.length; i++) {
+		console.log('are you fucken working?', i)
+		var splitted = coordi[i].textContent.split(",")
+		var long = Number.parseFloat(splitted[0])
+		var lat = Number.parseFloat(splitted[1])
+		var marker = new mapboxgl.Marker().setLngLat([long,lat]).addTo(map);
+
 	}
 	
 
 
-	var marker = new mapboxgl.Marker({
-		draggable: true
-	})
-		.setLngLat([coordi[0][0],coordi[0][1]])
-		//adds marker to map
-		.addTo(map);
 
 	// function onDragEnd() {
 	// 	//getLngLat() stores the markers coordinates in var lngLat
