@@ -1,26 +1,53 @@
 <h1>New Post</h1>
 
 <div class="input-field col s12">
-<form method="POST" action="/post">
+  <form method="POST" action="/post">
     <div class="input-field">
-        <select name="categoryId">
-            <option value="" disabled selected>Enter Category</option>
-            <% category.forEach(c => { %>
-              <option type="text" value="<%=c.id%>" name="categoryId"><%=c.name%></option>
-            <% }) %>
-          </select>
+      <select id="categoryId" name="categoryId">
+        <option value="" disabled selected>Enter Category</option>
+        <% category.forEach(c => { %>
+        <option type="text" value="<%=c.id%>" name="categoryId"><%=c.name%></option>
+        <% }) %>
+      </select>
     </div>
-        <label>Category</label>
-        <input type="hidden" name="userId" value="<%=currentUser.id%>">
-        <label for="headline" name="headline">Headline</label>
-        <input type="text" name=headline>
-        <label for="content">Content</label>
-        <input type="text" name="content">
-        <label for="location">Location</label>
-        <input type="text" name="location">
-        <label for="image">Image</label>
-        <input type="text" name="image">
-        <button type="submit">Submit</button>
-    </form>
+
+      <div id="drop" style="display:none;">
+        <label for="incId">Incident Type</label>
+      <select name="incType">
+        <option value="1">Noise Disturbance</option>
+        <option value="2">Suspicious Activity</option>
+        <option value="3">Burglary/Theft</option>
+        <option value="4">Vandalism</option>
+        <option value="5">Karen</option>
+        <option value="6">Other</option>
+      </select>
+      </div>
+
+    
+
+    <input type="hidden" name="userId" value="<%=currentUser.id%>">
+    <label for="headline">Headline</label>
+    <input type="text" name=headline>
+    <label for="content">Content</label>
+    <input type="text" name="content">
+    <label for="location">Location</label>
+    <input type="text" name="location">
+    <label for="image">Image</label>
+    <input type="text" name="image">
+    <button type="submit">Submit</button>
+  </form>
 </div>
 
+<script>
+  let dropDown = document.getElementById('categoryId')
+  let incDrop = document.getElementById('drop')
+  function incidentDrop(){
+    if (this.value == 1) {
+      incDrop.style.display = 'inline'
+    }
+    else {
+      incDrop.style.display = 'none'
+    }
+  }
+  dropDown.onchange = incidentDrop
+</script>

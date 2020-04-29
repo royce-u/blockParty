@@ -1,1 +1,6 @@
 <h1>main incident page</h1>
+
+<% post.forEach(p => { %>
+    <p><a href="post/<%=p.id%>"</a><%=p.headline%></a></p>
+    <p>-<%=p.user.username%></p>
+<% }) %>

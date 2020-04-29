@@ -6,7 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     headline: DataTypes.STRING,
     content: DataTypes.TEXT,
     location: DataTypes.TEXT,
-    image: DataTypes.STRING
+    image: DataTypes.STRING,
+    incType: DataTypes.STRING
   }, {});
   post.associate = function(models) {
     // associations can be defined here
