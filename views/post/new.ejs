@@ -1,3 +1,6 @@
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
+
 <h1>New Post</h1>
 
 <div class="input-field col s12">
@@ -31,7 +34,44 @@
     <label for="content">Content</label>
     <input type="text" name="content">
     <label for="location">Location</label>
-    <input type="text" name="location">
+    <div id="mapCont" style="display:none">
+      <div id="map"></div>
+    <pre id="coordinates" class="coordinates"></pre>
+    
+    </div>
+    <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoicnViYW5kbzIwNiIsImEiOiJjazk4eHZtbGkxbHh3M2duMTdpd3lxMWZ0In0.BRbBUA78Lc-K77-H8I4jCw';
+      var coordinates = document.getElementById('coordinates');
+      var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-122.3567,47.6246],
+        zoom: 13
+      });
+    
+      var marker = new mapboxgl.Marker({
+        draggable: true
+      })
+        .setLngLat([-122.3567,47.6246])
+        //adds marker to map
+        .addTo(map);
+    
+      function onDragEnd() {
+        //getLngLat() stores the markers coordinates in var lngLat
+        var lngLat = marker.getLngLat();
+        coordinates.style.display = 'block';
+        //displays marker coordinates in display box
+        coordinates.innerHTML =
+          'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+          document.getElementById('location').value = lngLat.lng + ',' +lngLat.lat
+          console.log('Longitude: ' + lngLat.lng)
+          console.log('Lattitude: ' + lngLat.lat)
+      }
+      //??fired when marker is finished being dragged???
+      marker.on('dragend', onDragEnd);
+    </script>
+
+    <input id="location" type="text" name="location">
     <label for="image">Image</label>
     <input type="text" name="image">
     <button type="submit">Submit</button>
@@ -41,12 +81,15 @@
 <script>
   let dropDown = document.getElementById('categoryId')
   let incDrop = document.getElementById('drop')
+  let mapCont = document.getElementById('mapCont')
   function incidentDrop(){
     if (this.value == 1) {
       incDrop.style.display = 'inline'
+      mapCont.style.display = 'inline'
     }
     else {
       incDrop.style.display = 'none'
+      mapCont.style.display = 'none'
     }
   }
   dropDown.onchange = incidentDrop
