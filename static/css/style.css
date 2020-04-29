@@ -34,4 +34,9 @@ body {
 		line-height: 18px;
 		border-radius: 3px;
 		display: none;
-	}
+  }
+  
+  .marker{
+    background-color: black;
+    color: white;
+  }

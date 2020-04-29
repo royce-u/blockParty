@@ -30,11 +30,11 @@
 
 	//loop thru locations and add markers
 	for (var i = 0; i < coordi.length; i++) {
-		console.log('are you fucken working?', i)
 		var splitted = coordi[i].textContent.split(",")
 		var long = Number.parseFloat(splitted[0])
 		var lat = Number.parseFloat(splitted[1])
-		var marker = new mapboxgl.Marker().setLngLat([long,lat]).addTo(map);
+		
+		var marker = new mapboxgl.Marker({color:"rgb(0,0,0)"}).setLngLat([long,lat]).addTo(map);
 
 	}
 	
