@@ -3,37 +3,53 @@
 
 
 <div class="container">
-	<div id="map"></div>
-<pre id="coordinates" class="coordinates"></pre>
+	
+	<% post.forEach(p => { %>
+		<p><%=p.headline%></p>
+		<p class="coordi"><%=p.location.split(",")%></p>
+		<% }) %>
 
+		<div id="map"></div>
+		<pre id="coordinates" class="coordinates"></pre>
 </div>
+
 <script>
 	mapboxgl.accessToken = 'pk.eyJ1IjoicnViYW5kbzIwNiIsImEiOiJjazk4eHZtbGkxbHh3M2duMTdpd3lxMWZ0In0.BRbBUA78Lc-K77-H8I4jCw';
-	var coordinates = document.getElementById('coordinates');
+	// var coordinates = document.getElementById('coordinates');
 	var map = new mapboxgl.Map({
 		container: 'map',
 		style: 'mapbox://styles/mapbox/streets-v11',
-		center: [-122.3567,47.6246],
+		center: [-122.3567, 47.6246],
 		zoom: 13
 	});
+
+	var coordi = document.getElementsByClassName('coordi')
+	// console.log('coordi before split' + coordi[0].textContent)
+	// var splitted = coordi[0].textContent.split(",")
+	// console.log(splitted)
+
+	//loop thru locations and add markers
+	for (var i = 0, i < coordi.length; i++) {
+		
+	}
+	
+
 
 	var marker = new mapboxgl.Marker({
 		draggable: true
 	})
-		.setLngLat([-122.3567,47.6246])
+		.setLngLat([coordi[0][0],coordi[0][1]])
 		//adds marker to map
 		.addTo(map);
 
-	function onDragEnd() {
-		//getLngLat() stores the markers coordinates in var lngLat
-		var lngLat = marker.getLngLat();
-		coordinates.style.display = 'block';
-		//displays marker coordinates in display box
-		coordinates.innerHTML =
-			'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
-			console.log('Longitude: ' + lngLat.lng)
-			console.log('Lattitude: ' + lngLat.lat)
-	}
-	//??fired when marker is finished being dragged???
-	marker.on('dragend', onDragEnd);
+	// function onDragEnd() {
+	// 	//getLngLat() stores the markers coordinates in var lngLat
+	// 	var lngLat = marker.getLngLat();
+	// 	coordinates.style.display = 'block';
+	// 	//displays marker coordinates in display box
+	// 	coordinates.innerHTML =
+	// 		'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+	// }
+	// //??fired when marker is finished being dragged???
+	// marker.on('dragend', onDragEnd);
 </script>

@@ -14,6 +14,12 @@ router.get('/', (req, res) => {
 
 
 router.get('/map', (req, res) => {
-    res.render('incident/map')
+    db.post.findAll({
+        where: {categoryId: 1},
+        include: db.user
+    })
+    .then((post) => {
+        res.render('incident/map', {post})
+    })
 })
 module.exports = router
