@@ -56,6 +56,7 @@ app.use('/profile', require('./controllers/profile'))
 app.use('/post', require('./controllers/post'))
 app.use('/event', require('./controllers/event'))
 app.use('/incident', require('./controllers/incident'))
+app.use('/people', require('./controllers/people'))
 
 //create a home route
 app.get('/', (req, res) => {

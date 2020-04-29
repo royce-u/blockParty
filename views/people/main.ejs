@@ -1,0 +1,30 @@
+
+<div class="container center">
+    <div class="row">
+        <div class="col s12">
+            <h3>Travel around the world without leaving your neighborhood</h3>
+            <h5>A page for the culturally curious</h5>
+        </div>
+        <div class="row">
+            <div class="col s4">
+                
+                <p>Ever walked past your neighbors door while they were cooking and wondered what that amazing smell was?  Try<h6>Dish Swap</h6>Trade Jook for Congee, Pelmeni for Shumai, Focaccia for Naan</p>
+            </div>
+            <div class="col s4">
+                <p>Ever wanted to learn Flamenco?  You never know.  Your local barista may be an expert. [insert dancer graphic here]</p>
+            </div>
+            <div class="col s4">
+                <p>Or maybe your learning another language and you just want someone to talk to.....</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <% post.forEach(p => { %>
+                    <p><a href="post/<%=p.id%>"</a><%=p.headline%></a></p>
+                    <p><%=p.content%></p>
+                    <p>-<%=p.user.username%></p>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</div>
