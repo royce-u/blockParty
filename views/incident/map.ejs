@@ -7,6 +7,7 @@
 	<% post.forEach(p => { %>
 		<p><%=p.headline%></p>
 		<p class="coordi"><%=p.location.split(",")%></p>
+		<p class="incType" type="hidden"><%=p.incType%></p>
 		<% }) %>
 
 		<div id="map"></div>
@@ -24,17 +25,37 @@
 	});
 
 	var coordi = document.getElementsByClassName('coordi')
-	// console.log('coordi before split' + coordi[0].textContent)
-	// var splitted = coordi[0].textContent.split(",")
-	// console.log(splitted)
+		
+	var markColor = ''
+
 
 	//loop thru locations and add markers
 	for (var i = 0; i < coordi.length; i++) {
 		var splitted = coordi[i].textContent.split(",")
 		var long = Number.parseFloat(splitted[0])
 		var lat = Number.parseFloat(splitted[1])
+		var incType = parseInt(document.getElementsByClassName('incType')[i].textContent)
+		console.log(incType, i)
+		if (incType == 1){
+			markColor = "rgb(0,153,0)"
+		} 
+		else if (incType == 2){
+			markColor = "rgb(0,0,153)"
+		}
+		else if (incType == 3){
+			markColor = "rgb(153,0,0)"
+		}
+		else if (incType == 4){
+			markColor = "rgb(153,0,153"
+		}
+		else if (incType == 5){
+			markColor = "rgb(204,204,0)"
+		}
+		else {
+			markColor = "rgb(0,0,0)"
+		}
 		
-		var marker = new mapboxgl.Marker({color:"rgb(0,0,0)"}).setLngLat([long,lat]).addTo(map);
+		var marker = new mapboxgl.Marker({color: markColor}).setLngLat([long,lat]).addTo(map);
 
 	}
 	
