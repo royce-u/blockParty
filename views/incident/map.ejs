@@ -16,7 +16,6 @@
 
 <script>
 	mapboxgl.accessToken = 'pk.eyJ1IjoicnViYW5kbzIwNiIsImEiOiJjazk4eHZtbGkxbHh3M2duMTdpd3lxMWZ0In0.BRbBUA78Lc-K77-H8I4jCw';
-	// var coordinates = document.getElementById('coordinates');
 	var map = new mapboxgl.Map({
 		container: 'map',
 		style: 'mapbox://styles/mapbox/streets-v11',
@@ -35,7 +34,6 @@
 		var long = Number.parseFloat(splitted[0])
 		var lat = Number.parseFloat(splitted[1])
 		var incType = parseInt(document.getElementsByClassName('incType')[i].textContent)
-		console.log(incType, i)
 		if (incType == 1){
 			markColor = "rgb(0,153,0)"
 		} 

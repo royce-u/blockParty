@@ -1,7 +1,14 @@
 html,
 body {
-    background-color: rgb(174, 174, 235);
+    height: 100%;
+    margin: 0;
 }
+
+#nav-topper {
+  background-color: #004f88;
+}
+
+
 
 
 body {
@@ -35,8 +42,7 @@ body {
 		border-radius: 3px;
 		display: none;
   }
-  
-  .marker{
-    background-color: black;
-    color: white;
-  }
+
+
+
+

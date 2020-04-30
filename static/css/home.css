@@ -1,0 +1,14 @@
+main{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/css/images/home.jpeg");
+    height: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    max-width: 100%;
+  }
+
+  #headerline {
+    font-family: 'Modak', cursive;
+    font-size: 5em;
+  }
