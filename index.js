@@ -69,6 +69,6 @@ app.get('*', (req, res) => {
 })
 //------------------------listen--------------------------------
 //pick a port to listen on
-app.listen(3000)
+app.listen(process.env.PORT || 3000)
 
 
