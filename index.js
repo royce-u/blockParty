@@ -5,9 +5,11 @@ let flash = require('connect-flash')
 let layouts = require('express-ejs-layouts')
 let session = require('express-session')
 let methodOverride = require('method-override')
+var rowdy = require('rowdy-logger')
 
 //create an app instance
 let app = express()
+var rowdyResults = rowdy.begin(app)
 
 //include passport(via the passport config file)
 let passport = require('./config/passportConfig')
@@ -74,6 +76,8 @@ app.get('*', (req, res) => {
 })
 //------------------------listen--------------------------------
 //pick a port to listen on
-app.listen(process.env.PORT || 3000)
+var server = app.listen(process.env.PORT || 3000, function(){
+    rowdyResults.print()
+})
 
 
