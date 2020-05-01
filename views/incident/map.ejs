@@ -1,17 +1,15 @@
 <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
 <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
 
-
 <div class="container">
 	
 	<% post.forEach(p => { %>
 		<p><%=p.headline%></p>
-		<p class="coordi"><%=p.location.split(",")%></p>
+		<p class="coordi" type="hidden"><%=p.location.split(",")%></p>
 		<p class="incType" type="hidden"><%=p.incType%></p>
 		<% }) %>
 
 		<div id="map"></div>
-		<!-- <pre id="coordinates" class="coordinates"></pre> -->
 </div>
 
 <script>
@@ -23,10 +21,8 @@
 		zoom: 13
 	});
 
-	var coordi = document.getElementsByClassName('coordi')
-		
+	var coordi = document.getElementsByClassName('coordi')	
 	var markColor = ''
-
 
 	//loop thru locations and add markers
 	for (var i = 0; i < coordi.length; i++) {
@@ -56,18 +52,4 @@
 		var marker = new mapboxgl.Marker({color: markColor}).setLngLat([long,lat]).addTo(map);
 
 	}
-	
-
-
-
-	// function onDragEnd() {
-	// 	//getLngLat() stores the markers coordinates in var lngLat
-	// 	var lngLat = marker.getLngLat();
-	// 	coordinates.style.display = 'block';
-	// 	//displays marker coordinates in display box
-	// 	coordinates.innerHTML =
-	// 		'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
-	// }
-	// //??fired when marker is finished being dragged???
-	// marker.on('dragend', onDragEnd);
 </script>

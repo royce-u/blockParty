@@ -4,6 +4,8 @@ let express = require('express')
 let flash = require('connect-flash')
 let layouts = require('express-ejs-layouts')
 let session = require('express-session')
+let methodOverride = require('method-override')
+
 //create an app instance
 let app = express()
 
@@ -14,6 +16,8 @@ let passport = require('./config/passportConfig')
 require('dotenv').config()
 
 //------------settings/middleware------------------
+//require method override
+app.use(methodOverride('_method'))
 //set template language to EJS
 app.set('view engine', 'ejs')
 
@@ -39,6 +43,7 @@ app.use(flash())
 //setup passport(depends on session; must come after sessions)
 app.use(passport.initialize())
 app.use(passport.session())
+
 
 
 //custom midle-ware = make certain variables available to EJS pages thru locals

@@ -1,16 +1,75 @@
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
 
 <div class="container center">
     <div class="row">
-        <div class="col s12"><h1>main incident page</h1></div>
-        <div class="col s3">
-            <% post.forEach(p => { %>
-                <p><a href="post/<%=p.id%>"</a><%=p.headline%></a></p>
-                <p><%=p.content%></p>
-                <p>-<%=p.user.username%></p>
-            <% }) %>
+        <div class="col s12">
+            <h1>main incident page</h1>
         </div>
-        <div class="col s9">
-            <h3>Map maybe goes here?</h3>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <% post.forEach(p => { %>
+            <p class="coordi" hidden><%=p.location%></p>
+            <p class="incType" hidden><%=p.incType%></p>
+            <% }) %>
+
+            <div id="map"></div>
+        </div>
+    </div>
+    <div class="row incCont">
+        <div class="col s12">
+            <% post.forEach(p => { %>
+            <p><a href="post/<%=p.id%>" </a><%=p.headline%></a></p>
+            <p><%=p.content%></p>
+            <p>-<%=p.user.username%></p>
+            <% }) %>
         </div>
     </div>
 </div>
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoicnViYW5kbzIwNiIsImEiOiJjazk4eHZtbGkxbHh3M2duMTdpd3lxMWZ0In0.BRbBUA78Lc-K77-H8I4jCw';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-122.3567, 47.6246],
+        zoom: 13
+    });
+
+    var coordi = document.getElementsByClassName('coordi')
+    var markColor = ''
+
+    //loop thru locations and add markers
+    for (var i = 0; i < coordi.length; i++) {
+        var splitted = coordi[i].textContent.split(",")
+        console.log('after split: ' + splitted)
+        var long = Number.parseFloat(splitted[0])
+        console.log('long after converted: ' + long)
+        var lat = Number.parseFloat(splitted[1])
+        console.log('lat after converted: ', lat)
+        var incType = parseInt(document.getElementsByClassName('incType')[i].textContent)
+        if (incType == 1) {
+            markColor = "rgb(0,153,0)"
+        }
+        else if (incType == 2) {
+            markColor = "rgb(0,0,153)"
+        }
+        else if (incType == 3) {
+            markColor = "rgb(153,0,0)"
+        }
+        else if (incType == 4) {
+            markColor = "rgb(153,0,153"
+        }
+        else if (incType == 5) {
+            markColor = "rgb(97,99,99)"
+        }
+        else {
+            console.log('do you make it to yellow?')
+            markColor = "rgb(204,204,0)"
+        }
+
+        var marker = new mapboxgl.Marker({ color: markColor }).setLngLat([long, lat]).addTo(map);
+
+    }
+</script>

@@ -4,7 +4,7 @@ let router = require('express').Router()
 
 router.get('/', (req, res) => {
     db.post.findAll({
-        where: {categoryId: 10},
+        where: {categoryId: 4},
         include: [db.user]
     })
     .then((post) => {

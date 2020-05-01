@@ -17,7 +17,13 @@
     <input type="hidden" name="userId" value="<%=post.user.id%>">
     <input type="hidden" name="postId" id="postId" value="<%=post.id%>">
     <button type="submit">Submit</button>
+    </button>
     </form>
+<a href="/post/<%=post.id%>/edit">Edit</a>
+
+<form method="POST" action="/post/<%=post.id%>?_method=DELETE">
+    <input type="submit" value="Delete">
+</form>
 
 
 
