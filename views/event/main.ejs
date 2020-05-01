@@ -1,12 +1,8 @@
 
-<div class="container">
+<div class="container feed">
     <h1>Events</h1>
     <div class="row">
         <div class="col s8">
-            <p>some random shit</p>
-        </div>
-
-        <div class="col s4">
             <% post.forEach(p => { %>
                 <p><a href="/post/<%=p.id%>"><%=p.headline%></a></p>
                 <p><%=p.content%></p>
@@ -14,5 +10,44 @@
                 <p>-<%=p.user.username%></p>
                 <% }) %>
         </div>
+        <h4>City Updates</h4>
+        <div class="col s4">
+            <ul class="collapsible expandable">
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">restaurants</i>Eat</div>
+                  <div class="collapsible-body"><span>Bite of Seattle cancelled due to Covid-19</span></div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">star</i>Arts</div>
+                  <div class="collapsible-body"><span>Pacific NW ballet live streaming Romeo and Juliet</span></div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">rowing</i>Fitness</div>
+                  <div class="collapsible-body"><span>Maybe your learning another language and you just want someone to talk
+                    to.....</span></div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">pets</i>Pets</div>
+                    <div class="collapsible-body"><span>Myrtle Edwards park to remain open</span></div>
+                  </li>
+              </ul>
+        </div>
+        </div>
+        
     </div>
 </div>
+
+
+<style>
+    body{
+        background-image: url("css/images/party.jpeg");
+        background-size: cover;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems6 = document.querySelectorAll('.collapsible.expandable');
+    var instances6 = M.Collapsible.init(elems6, {accordion:false});
+  });
+</script>

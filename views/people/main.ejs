@@ -1,4 +1,4 @@
-<div class="container center">
+<div class="container center feed">
     <div class="row">
         <div class="col s12">
             <h3>Travel around the world without leaving your neighborhood</h3>
@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col s8 feed">
+        <div class="col s8">
             <% post.forEach(p => { %>
             <p><a href="post/<%=p.id%>"><%=p.headline%></a></p>
             <p><%=p.content%></p>
@@ -21,7 +21,7 @@
                 </li>
                 <li>
                   <div class="collapsible-header"><i class="material-icons">directions_run</i>Dance</div>
-                  <div class="collapsible-body"><span>Ever wanted to learn Flamenco? You never know. Your local barista may be an
+                  <div class="collapsible-body"><span>Ever wanted to learn the Viennese Waltz? You never know, your local barista may be an
                     expert.</span></div>
                 </li>
                 <li>
@@ -42,16 +42,8 @@
         background-image: url("css/images/friends2.jpeg");
         background-size: cover;
     }
-    span{
-        color: white;
-    }
-    .collapsible-body{
-        background-color: black;
-    }
-    .collapsible-header{
-        background-color: gray;
-        color: #004f88;
-    }
+    
+
 </style>
 
 <script>
@@ -60,19 +52,6 @@
     var instances5 = M.Collapsible.init(elems5, {accordion:false});
   });
 </script>
-
-<!-- <div class="col s3">
-    <p class="carousel-item grey darken-4">Ever walked past your neighbors door while they were cooking and
-        wondered what that
-        amazing smell was? Try Dish Swap - Trade Jook for Congee, Pelmeni for Shumai, Focaccia for Naan</p>
-    <p class="carousel-item">Ever wanted to learn Flamenco? You never know. Your local barista may be an
-        expert.
-        [insert dancer graphic here]</p>
-    <p class="carousel-item">Or maybe your learning another language and you just want someone to talk
-        to.....</p>
-</div> -->
-
-
 
 
 
