@@ -1,8 +1,18 @@
-<h1>main event page</h1>
 
-<% post.forEach(p => { %>
-<p><a href="/post/<%=p.id%>"><%=p.headline%></a></p>
-<p><%=p.content%></p>
-<p><%=p.location%></p>
-<p>-<%=p.user.username%></p>
-<% }) %>
+<div class="container">
+    <h1>Events</h1>
+    <div class="row">
+        <div class="col s8">
+            <p>some random shit</p>
+        </div>
+
+        <div class="col s4">
+            <% post.forEach(p => { %>
+                <p><a href="/post/<%=p.id%>"><%=p.headline%></a></p>
+                <p><%=p.content%></p>
+                <p><%=p.location%></p>
+                <p>-<%=p.user.username%></p>
+                <% }) %>
+        </div>
+    </div>
+</div>

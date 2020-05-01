@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="stylesheet" href="css/home.css">
+    
 
 </head>
 <body>
@@ -21,10 +21,13 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.sidenav');
-            var instances = M.Sidenav.init(elems, {});
-            var elems3 = document.querySelectorAll('select');
-            var instances3 = M.FormSelect.init(elems3, {});
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, {});
+        var elems3 = document.querySelectorAll('select');
+        var instances3 = M.FormSelect.init(elems3, {});
+        var elems4 = document.querySelectorAll('.carousel');
+    var instances4 = M.Carousel.init(elems, options);
+        
 
             //start date is current date
             var startDate = new Date()
