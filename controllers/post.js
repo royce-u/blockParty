@@ -86,6 +86,7 @@ router.put('/:id', (req, res) => {
         res.redirect('/post/' + req.params.id)
     })
     .catch(err => {
+
         res.send(err)
     })
 })
