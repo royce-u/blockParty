@@ -2,18 +2,18 @@
     <div class="row">
         <div class="col s12">
             <h3>Travel around the world without leaving your neighborhood</h3>
-            <h5>A page for the culturally curious</h5>
         </div>
     </div>
     <div class="row">
         <div class="col s8">
             <% post.forEach(p => { %>
-            <p><a href="post/<%=p.id%>"><%=p.headline%></a></p>
-            <p><%=p.content%></p>
-            <p>-<%=p.user.username%></p>
-            <% }) %>
-        </div>
-        <div class="col s4">
+                <p><a href="post/<%=p.id%>"><%=p.headline%></a></p>
+                <p><%=p.content%></p>
+                <p>-<%=p.user.username%></p>
+                <% }) %>
+            </div>
+            <div class="col s4">
+                <h5>....for the culturally curious</h5>
             <ul class="collapsible expandable">
                 <li>
                   <div class="collapsible-header"><i class="material-icons">restaurants</i>Eat</div>
@@ -26,8 +26,8 @@
                 </li>
                 <li>
                   <div class="collapsible-header"><i class="material-icons">group</i>Speak</div>
-                  <div class="collapsible-body"><span>Maybe your learning another language and you just want someone to talk
-                    to.....</span></div>
+                  <div class="collapsible-body"><span>Maybe your learning another language and you just want someone to practice
+                    with.....</span></div>
                 </li>
               </ul>
         </div>
@@ -39,8 +39,9 @@
 </div>
 <style>
     body{
-        background-image: url("css/images/friends2.jpeg");
+        background-image: url("css/images/culture.png");
         background-size: cover;
+        background-repeat: no-repeat;
     }
     
 

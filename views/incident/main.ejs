@@ -8,13 +8,23 @@
         </div>
     </div>
     <div class="row">
-        <div class="col s12">
+        <div class="col s8">
             <% post.forEach(p => { %>
             <p class="coordi" hidden><%=p.location%></p>
             <p class="incType" hidden><%=p.incType%></p>
             <% }) %>
 
             <div id="map"></div>
+        </div>
+        <div class="col s4 feed left-align">
+            <p><img class="img-marker" src="/css/images/green_marker.svg" alt="green_marker">Noise Disturbance</p>
+            <p><img class="img-marker" src="/css/images/blue_marker.svg" alt="blue_marker">Suspicious Activity</p>
+            <p><img class="img-marker" src="/css/images/red_marker.svg" alt="red_marker">Burglary/Theft</p>
+            <p><img class="img-marker" src="/css/images/pink_marker.svg" alt="pink_marker">Vandalism</p>
+            <p><img class="img-marker" src="/css/images/grey_marker.svg" alt="grey_marker">Violence</p>
+            <p><img class="img-marker" src="/css/images/yellow_marker.svg" alt="yellow_marker">Other</p>
+            
+
         </div>
     </div>
     <div class="row incCont">

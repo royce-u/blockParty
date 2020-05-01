@@ -4,10 +4,12 @@
     <div class="row">
         <div class="col s8">
             <% post.forEach(p => { %>
-                <p><a href="/post/<%=p.id%>"><%=p.headline%></a></p>
+                <div class="feed">
+                  <p><a href="/post/<%=p.id%>"><%=p.headline%></a></p>
                 <p><%=p.content%></p>
                 <p><%=p.location%></p>
                 <p>-<%=p.user.username%></p>
+                </div>
                 <% }) %>
         </div>
         <h4>City Updates</h4>
@@ -23,8 +25,7 @@
                 </li>
                 <li>
                   <div class="collapsible-header"><i class="material-icons">rowing</i>Fitness</div>
-                  <div class="collapsible-body"><span>Maybe your learning another language and you just want someone to talk
-                    to.....</span></div>
+                  <div class="collapsible-body"><span>Take the stairs</span></div>
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">pets</i>Pets</div>
@@ -40,7 +41,7 @@
 
 <style>
     body{
-        background-image: url("css/images/party.jpeg");
+        background-image: url("/css/images/golden_hour.jpeg");
         background-size: cover;
     }
 </style>
