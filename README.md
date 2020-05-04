@@ -1,4 +1,15 @@
 # blockParty
+
+Block party is an app that brings you closer to your community.  A place to support your local shopkeeper, join the neighborhood watch.  
+
+Use the New Post tab to submit a new post to the feed.
+	First select the category your post falls under:
+		Incident - Any incident you would like to report, from a simple noise disturbance to a burglary/theft.
+		Use the map to tag the exact location of the incident.
+		Event - Yoga in the park, doggy play dates, fundraisers, all social events belong here.
+		Classified - For sale, for trade, lost, found, all classifieds belong here.
+		People - A page for the culturally curious.  A space to find similarities between cultures to bring us closer together.  Trade recipes, dishes and ask questions.   
+
 Installation
 	1) Fork and Clone repository
 	2) Install the modules from package.json
@@ -43,48 +54,4 @@ Contributing
 		3)Commit your changes: git commit -am 'Add some feature'
 		4)Push to the branch: git push origin my-new-feature
 		5)Submit a pull request
-		
-	Routes
-	┌────────┬────────────────────┐
-	│ Method │ Path               │ 
-	├────────┼────────────────────┤
-	│ GET    │ /auth/login        │ GET - route to user login page
-	├────────┼────────────────────┤
-	│ GET    │ /auth/signup       │ GET - route to user sign up page
-	├────────┼────────────────────┤
-	│ POST   │ /auth/signup       │ POST - route to confirm user sign up
-	├────────┼────────────────────┤
-	│ GET    │ /auth/logout       │
-	├────────┼────────────────────┤
-	│ GET    │ /profile/user      │
-	├────────┼────────────────────┤
-	│ GET    │ /profile/guest/:id │
-	├────────┼────────────────────┤
-	│ GET    │ /profile/admin     │
-	├────────┼────────────────────┤
-	│ GET    │ /post              │
-	├────────┼────────────────────┤
-	│ GET    │ /post/new          │
-	├────────┼────────────────────┤
-	│ POST   │ /post              │
-	├────────┼────────────────────┤
-	│ GET    │ /post/:id          │
-	├────────┼────────────────────┤
-	│ POST   │ /post/comments     │
-	├────────┼────────────────────┤
-	│ GET    │ /post/:id/edit     │
-	├────────┼────────────────────┤
-	│ PUT    │ /post/:id          │
-	├────────┼────────────────────┤
-	│ DELETE │ /post/:id          │
-	├────────┼────────────────────┤
-	│ GET    │ /event             │
-	├────────┼────────────────────┤
-	│ GET    │ /incident          │
-	├────────┼────────────────────┤
-	│ GET    │ /people            │
-	├────────┼────────────────────┤
-	│ GET    │ /                  │
-	├────────┼────────────────────┤
-	│ GET    │ *                  │
-
+	

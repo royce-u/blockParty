@@ -3,6 +3,8 @@ body {
   height: auto;
   margin: 0;
   font-family: 'wendy one', arial;
+  color: white;
+  background-color: black;
 }
 
 #nav-topper {
@@ -42,16 +44,11 @@ main {
 		display: none;
   }
 
-  /* .incCont{
-    margin-top: 2em;
-  } */
-
   #mapper{
     display: block;
     height: 300px;
     width: 300px;
   }
-
 
 h1{
   color: white;
@@ -89,7 +86,7 @@ span{
   content: '';
   background:url("/css/images/white_balloons.svg");
   background-size:cover;
-      position:absolute;
+  position:absolute;
   width:20px;
   height:20px;
   margin-left:-20px;

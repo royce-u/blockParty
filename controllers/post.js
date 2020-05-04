@@ -24,7 +24,9 @@ router.get('/new', (req, res) => {
 router.post('/', (req, res) => {
     db.post.create(req.body)
         .then(() => {
+            
             res.redirect('/post')
+            
         })
         .catch(err => {
             res.send('error', err)
@@ -99,7 +101,7 @@ router.delete('/:id', (req, res) => {
     .then(() => {
         res.send('are you gone?')
     })
-    .catch(()=> {
+    .catch((err)=> {
         res.send(err)
     })
 })
